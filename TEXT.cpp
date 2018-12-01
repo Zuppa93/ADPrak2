@@ -10,14 +10,14 @@ void TEXT::anhaenge(char * ln) {
 	//int length = strLen(ln);
 	
 	EVKD * textObjekt = new EVKD(ln,nullptr);
-	// MÃ¶glicher Fehler, weil u.U. das Objekt nach return Befehl gelÃ¶scht wird
+	// Möglicher Fehler, weil u.U. das Objekt nach return Befehl gelöscht wird
 	this->Start[help] = textObjekt;
 	// Pointer des letzten Objektes auf neues Objekt biegen
 	if (help == 0) {
 		this->AnzTexte++;
 	}else {
 		this->Start[help - 1]->setNext(textObjekt);
-		// MÃ¶glich dass wir hier nur Call by Value haben (ggfs. setAnzTexte(int Anz) erstellen)
+		// Möglich dass wir hier nur Call by Value haben (ggfs. setAnzTexte(int Anz) erstellen)
 		this->AnzTexte++;
 	}
 
@@ -69,7 +69,7 @@ void TEXT::zeigeDich() {
 
 	cout << "ICh bin eine Testausgabe"<< endl;
 	cout << "Nun zu dem spannendem Teil der Ausgabe" << endl;
-	cout << "Anzahl der EintrÃ¤ge: " << this->AnzTexte << endl;
+	cout << "Anzahl der Einträge: " << this->AnzTexte << endl;
 	for (int i = 0; i < this->AnzTexte;i++) {
 		cout << "|| Pos: " << i << " || Pointer: " << this->Start[i] <<"|| Next: "<< this->Start[i]->getNext() <<" || Text: "<< this->Start[i]->getDaten() << endl;
 	}
@@ -86,20 +86,5 @@ int TEXT::getAnzTexte() {
 }
 
 void TEXT::decrementAnzTexte() {
-	this->AnzTexte--;
-}
-
-void TEXT::reassambleArrayPlus(int reap, int MAX) {
-	for (MAX; reap <= MAX; MAX--) {
-		this->Start[MAX + 1] = this->Start[MAX];
-	}
-	this->AnzTexte++;
-}
-
-void TEXT::reassambleArrayMinus(int reap, int MAX) {
-	for (reap; reap < MAX; reap++) {
-		this->Start[reap] = this->Start[reap + 1];
-	}
-	//MÃ¶glicher Fehler Call by Value
 	this->AnzTexte--;
 }

@@ -8,7 +8,7 @@ EVKD::EVKD(char * LPSZDaten, EVKD * N) {
 	while (LPSZDaten[AnzChars] != '\0') {
 		AnzChars++;
 	}
-	AnzChars--; //(Falls Stringendezeichen nicht als Element des Arrays z√§hlt)
+	AnzChars--; //(Falls Stringendezeichen nicht als Element des Arrays z‰hlt)
 	for (int i = 0; i < AnzChars;i++) {
 		this->Daten[i] = &LPSZDaten[i];
 	}

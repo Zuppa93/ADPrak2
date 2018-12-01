@@ -23,7 +23,4 @@ class TEXT {
 
 		int getAnzTexte();
 		void decrementAnzTexte();
-
-		void reassambleArrayPlus(int  reap,int MAX);
-		void reassambleArrayMinus(int reap,int MAX);
 };
